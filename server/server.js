@@ -18,7 +18,7 @@ app.post('/todos', (req, res) => { // URL for REST API
     res.send(doc);
   }, (err) => {
     res.status(400).send(err); // will change
-  })
+  });
 });
 
 app.get('/todos', (req, res) => {
@@ -26,7 +26,7 @@ app.get('/todos', (req, res) => {
     res.send({todos}); // send as obj for flexibility
   }, (err) => {
     res.status(400).send(err);
-  })
+  });
 });
 
 app.listen(3000, () => {
