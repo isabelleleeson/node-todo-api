@@ -21,6 +21,14 @@ app.post('/todos', (req, res) => { // URL for REST API
   })
 });
 
+app.get('/todos', (req, res) => {
+  Todo.find().then((todos) => {
+    res.send({todos}); // send as obj for flexibility
+  }, (err) => {
+    res.status(400).send(err);
+  })
+});
+
 app.listen(3000, () => {
   console.log('Started on port 3000');
 });
